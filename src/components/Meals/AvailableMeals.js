@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./AvailableMeals.module.css";
+import Card from "../UI/Card";
 
 const DUMMY_MEALS = [
   {
@@ -27,11 +28,26 @@ const DUMMY_MEALS = [
     price: 18.99,
   },
 ];
+
+
+
+
 const AvailableMeals = () => {
+  
+  
   const mealsList = DUMMY_MEALS.map((meal) => {
     return <li>{meal.name}</li>;
   });
-  return <ul className={styles.meals}>{mealsList}</ul>;
+  
+  
+  
+  return (
+    <Card>
+    <section className={styles.meals}>
+      <ul>{mealsList}</ul>
+    </section>
+    </Card>
+  );
 };
 
 export default AvailableMeals;
